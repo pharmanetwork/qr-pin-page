@@ -1,18 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Accès sécurisé</title>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 80px;
+  background: #0f172a;
+  color: white;
+}
+.box {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+  display: inline-block;
+}
+input {
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+}
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>🔒 Entrez le code PIN</h2>
+  <input type="password" id="pin" placeholder="Code PIN">
+  <br><br>
+  <button onclick="checkPin()">Valider</button>
+  <p id="result"></p>
+</div>
+
 <script>
 function checkPin() {
-  let pin = document.getElementById("pin").value;
+  var pin = document.getElementById("pin").value;
 
   if(pin === "3289") {
-
-    // petit effet avant redirection
-    document.getElementById("result").innerHTML = "✔ Accès validé...";
-    
-    setTimeout(() => {
-      window.location.href = "success.html";
-    }, 800);
-
+    window.location.href = "success.html";
   } else {
     document.getElementById("result").innerHTML = "❌ Code incorrect";
   }
 }
 </script>
+
+</body>
+</html>
+✅ 2) success.html (page après PIN)
+
+👉 crée un nouveau fichier dans ton repo :
+
+Nom : success.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Accès validé</title>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 100px;
+  background: black;
+  color: lime;
+}
+.box {
+  font-size: 28px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  🔓 ACCÈS AUTORISÉ <br><br>
+  Code Pin valide.
+</div>
+
+</body>
+</html>
