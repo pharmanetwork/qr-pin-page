@@ -27,10 +27,13 @@ body {
 </body>
 </html>
 <br><br>
-<button onclick="goBack()">↩ Valider lordonnance</button>
+<button onclick="showText()">Afficher le message</button>
+
+<p id="message"></p>
 
 <script>
-function goBack() {
-  window.location.href = "index.html";
+function showText() {
+  document.getElementById("message").innerHTML =
+  "🎉 Bravo ! Tu as débloqué le contenu secret.";
 }
 </script>
