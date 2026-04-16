@@ -2,46 +2,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Access Granted</title>
-
+<title>Accès sécurisé</title>
 <style>
 body {
-  margin: 0;
-  background: radial-gradient(circle, #0a0a0a, black);
-  color: #22c55e;
   font-family: Arial;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   text-align: center;
+  margin-top: 80px;
+  background: #0f172a;
+  color: white;
 }
-
 .box {
-  animation: fadeIn 1s ease;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+  display: inline-block;
 }
-
-h1 {
-  font-size: 50px;
-  letter-spacing: 3px;
-}
-
-p {
-  color: #aaa;
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px 20px;
-  border: none;
+input {
+  padding: 12px;
+  font-size: 18px;
   border-radius: 10px;
-  background: #22c55e;
-  cursor: pointer;
+  border: none;
 }
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: scale(0.9);}
-  to {opacity: 1; transform: scale(1);}
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -49,13 +38,24 @@ button {
 <body>
 
 <div class="box">
-  <h1>ACCESS GRANTED</h1>
-  <p>Bienvenue dans l’espace sécurisé 🔓</p>
-
-  <button onclick="window.location.href='index.html'">
-    Déconnexion
-  </button>
+  <h2>🔒 Entrez le code PIN</h2>
+  <input type="password" id="pin" placeholder="Code PIN">
+  <br><br>
+  <button onclick="checkPin()">Valider</button>
+  <p id="result"></p>
 </div>
+
+<script>
+function checkPin() {
+  var pin = document.getElementById("pin").value;
+
+  if(pin === "3289") {
+    window.location.href = "success.html";
+  } else {
+    document.getElementById("result").innerHTML = "❌ Code incorrect";
+  }
+}
+</script>
 
 </body>
 </html>
