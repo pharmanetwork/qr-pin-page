@@ -1,6 +1,48 @@
-<button onclick="checkPin()">Valider</button>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Accès sécurisé</title>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 80px;
+  background: #0f172a;
+  color: white;
+}
+.box {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+  display: inline-block;
+}
+input {
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+}
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>🔒 Entrez le code PIN</h2>
+  <input type="password" id="pin" placeholder="Code PIN">
+  <br><br>
+  <button onclick="checkPin()">Valider</button>
   <p id="result"></p>
-  <div id="secret" class="secret"></div>
 </div>
 
 <script>
@@ -8,11 +50,9 @@ function checkPin() {
   var pin = document.getElementById("pin").value;
 
   if(pin === "3289") {
-    document.getElementById("result").innerHTML = "✅ Accès autorisé";
-    document.getElementById("secret").innerHTML = "🎉 Bienvenue ! Contenu débloqué.";
+    window.location.href = "success.html";
   } else {
     document.getElementById("result").innerHTML = "❌ Code incorrect";
-    document.getElementById("secret").innerHTML = "";
   }
 }
 </script>
