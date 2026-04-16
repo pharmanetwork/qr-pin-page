@@ -28,11 +28,13 @@ body {
 </body>
 </html>
 <br><br>
-<button onclick="showText()">Validé l'ordonnance</button>
-
-<p id="message"></p>
+<button onclick="goToSecret()">Valider l'ordonnance</button>
 
 <script>
+function goToSecret() {
+  window.location.href = "secret.html";
+}
+</script>
 function showText() {
   document.getElementById("message").innerHTML =
   "L'ordonnance a été validé.";
