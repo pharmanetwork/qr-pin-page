@@ -3,16 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Accès validé</title>
+
 <style>
 body {
-  font-family: Arial;
-  text-align: center;
-  margin-top: 100px;
+  margin: 0;
   background: black;
-  color: lime;
+  color: #22c55e;
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
+
 .box {
-  font-size: 28px;
+  animation: fadeIn 1s ease;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 24px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background: #22c55e;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 </style>
 </head>
@@ -20,23 +41,17 @@ body {
 <body>
 
 <div class="box">
-  🔓 ACCÈS AUTORISÉ <br><br>
-  L'ordonnance est toujours en cours de validité.
-  Veuillez la validé.
-</div>
+  <h1>🔓 ACCÈS AUTORISÉ</h1>
+  <p>Clique pour continuer</p>
 
-</body>
-</html>
-<br><br>
-<button onclick="goToSecret()">Valider l'ordonnance</button>
+  <button onclick="goToSecret()">Valider</button>
+</div>
 
 <script>
 function goToSecret() {
   window.location.href = "secret.html";
 }
 </script>
-function showText() {
-  document.getElementById("message").innerHTML =
-  "L'ordonnance a été validé.";
-}
-</script>
+
+</body>
+</html>
